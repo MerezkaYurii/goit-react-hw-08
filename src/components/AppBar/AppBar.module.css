@@ -1,0 +1,33 @@
+.container {
+  background-color: black;
+  padding: 10px;
+}
+.email {
+  color: white;
+}
+.link {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+.active {
+  color: red;
+  text-decoration: underline;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+}
+.button {
+  bottom: 0;
+  background-color: lightgrey;
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  left: 30%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}

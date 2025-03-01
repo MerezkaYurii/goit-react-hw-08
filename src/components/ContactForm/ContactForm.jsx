@@ -2,8 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import s from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsOps';
-
+import { addContact } from '../../redux/contacts/operations';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -45,12 +44,12 @@ const ContactForm = () => {
       >
         <Form className={s.form}>
           <label>
-            Name
+            Name:
             <Field className={s.field} name="name" placeholder="Name Surname" />
             <ErrorMessage className={s.error} name="name" component="p" />
           </label>
           <label>
-            Number
+            Number:
             <Field
               className={s.field}
               name="number"
