@@ -51,3 +51,6 @@ function App() {
 }
 
 export default App;
+
+// https://goit-react-hw-07-nine-tan.vercel.app/
+// https://github.com/MerezkaYurii/goit-react-hw-07
