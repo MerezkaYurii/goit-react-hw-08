@@ -1,7 +1,28 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import s from './LoginForm.module.css';
-const LoginForm = ({ handleSubmit, initialValues }) => {
+import { useDispatch } from 'react-redux';
+import { loginThunk } from '../../redux/auth/operations';
+import toast from 'react-hot-toast';
+const LoginForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const initialValues = {
+    email: '',
+    password: '',
+  };
+  const handleSubmit = (values, options) => {
+    dispatch(loginThunk(values))
+      .unwrap()
+      .then(res => {
+        toast.success(`Welcome, ${res.user.email}`);
+        navigate('/contacts', { replace: true });
+      })
+      .catch(() => toast.error('Invalid data'));
+    console.log(values);
+    options.resetForm();
+  };
+
   return (
     <div className={s.contaiher}>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
