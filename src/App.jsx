@@ -25,7 +25,7 @@ function App() {
 
   return isRefreshing ? null : (
     <div className="cont">
-      <h2>Phonebook</h2>
+      <h2 className="title">Phonebook</h2>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
